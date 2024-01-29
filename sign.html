@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid #ccc; 
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 500px; /* Adjust as needed */
+    } 
+    .heading {
+      margin-top: 0;
+      margin-bottom: 0;
+      background-color: tomato;
+      padding: 10px;
+      line-height: 0;
+      color: yellow;
+    }
+    .form-contents {
+      background-color: #44a08d;
+      color: yellow;
+      padding: 20px;
+      margin:0;
+    }
+
+    .buttons {
+      background-color: tomato;
+      text-align: right;
+      padding: 20px;
+      margin:0;
+    }
+    .buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: tomato;
+      text-align: right;
+      margin-top: 0;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+    label {
+      display: inline-block;
+      width: 150px;
+      margin-left: 10px;
+      text-align: right;
+    }
+    input[type="email"] {
+      flex: 1; /* Expand input to fill remaining space */
+      padding: 8px;
+      border: 1px solid #ccc;
+      width: 40%; /* Adjust the width as needed */
+      height: 10px; 
+      margin-left: 10px;
+    }
+    input[type="placeholder"] {
+      flex: 1; /* Expand input to fill remaining space */
+      padding: 8px;
+      border: 1px solid #ccc;
+      width: 40%; /* Adjust the width as needed */
+      height: 10px; 
+      margin-left: 10px;
+    }
+    input[type="password"] {
+      flex: 1; /* Expand input to fill remaining space */
+      padding: 8px;
+      border: 1px solid #ccc;
+      width: 40%; /* Adjust the width as needed */
+      height: 10px; 
+      margin-left: 10px;
+    }
+    input[type="tel"] {
+      flex: 1; /* Expand input to fill remaining space */
+      padding: 8px;
+      border: 1px solid #ccc;
+      width: 40%; /* Adjust the width as needed */
+      height: 10px; 
+      margin-left: 10px;
+    }
+    select {
+      margin-left: 10px;
+    }
+    input[type="radio"] {
+      background-color: white;
+      margin-left: 10px;
+    }
+    input[type="checkbox"] {
+      vertical-align: right; /* Align checkbox with label text */
+      margin-left: 10px;
+    }
+    .buttons button[type="submit"] {
+      background-color: #f44336; /* Blue color for submit button */
+      color: white;
+      margin-right: 10px;
+    }
+    .buttons button[type="button"] {
+      background-color: green; /* Red color for cancel button */
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+        <div class=" heading">
+            <h3> Sign Up</h3>
+        </div>
+        <div class=" form-contents">
+            <label for="name">First name </label>
+                <input type="placeholder" id="name" name="name" value="Enter First Name"/><br><br>
+            <label for="name">Last name </label>
+                <input type="placeholder" id="name" name="name" value="Enter First Name"/><br><br>
+            <label for="dob">Date of Birth </label>
+                <select id="dateSelect"> <option value="" disabled selected> Date </option></select>
+                <select id="monthSelect" name="month"> <option value="" disabled selected> Month </option></select>
+                <select id="yearSelect" name="year"> <option value="" disabled selected> Year </option></select><br><br>
+            <label for="gender"> Gender</label>
+                <input type="radio" id="male" value="male"/> Male
+                <input type="radio" id="female" value="female" checked /> Female<br><br>
+            <label for="country">Country </label>
+                <select id="countrySelect">
+                    <option value="" disabled selected>Country</option>
+                </select><br><br>
+            <label for="email"> E-mail</label>
+                <input type="email" id="email" name="email"/><br><br>
+            <label for="phone">Phone </label>
+                <input type="tel" id="phone" name="phone"/><br><br>
+            <label for="pwd">Password</label>
+                <input type="password" id="pwd" name="pwd"/><br><br>
+            <label for="pwd"> Confirm Password</label>
+                <input type="password" id="pwd" name="pwd"/><br><br>
+            <label class="checkbox-label" for="subscribe"> </label>
+                <input type="checkbox" id="subscribe" name="subscribe">I Agree to the Terms of use<br><br>
+        </div>
+        <div class=" buttons">
+            <button type="submit"><span class="submit">Submit</span></button>
+            <button type="button"> <span class="cancel">Cancel</span></button>
+        </div>
+    </form>
+  </div>
+  <script>
+    const countryList = [ "United States", "Canada", "United Kingdom", "Australia", "Germany","France", "Japan", "China", "Brazil", "India","South Korea", "Mexico", "Italy", "Spain", "Russia","South Africa", "Saudi Arabia", "Egypt", "Turkey", "Argentina"];
+    const monthList = [ 'January', 'February', 'March', 'April','May', 'June', 'July', 'August','September', 'October', 'November', 'December'];
+    const dateList = Array.from({ length: 31 }, (_, i) => (i + 1).toString());
+    const yearList = Array.from({ length: 10 }, (_, i) => (2023 - i).toString());
+    const countrySelect = document.getElementById("countrySelect");
+    const monthSelect = document.getElementById("monthSelect");
+    const dateSelect = document.getElementById("dateSelect");
+    const yearSelect = document.getElementById("yearSelect");
+    countryList.forEach(country => {
+        const option = document.createElement("option");
+        option.value = country;
+        option.textContent = country;
+        countrySelect.appendChild(option);
+    });
+    monthList.forEach(month => {
+        const option = document.createElement("option");
+        option.value = month;
+        option.textContent = month;
+        monthSelect.appendChild(option);
+    });
+    dateList.forEach(date => {
+        const option = document.createElement("option");
+        option.value = date;
+        option.textContent = date;
+        dateSelect.appendChild(option);
+    });
+    const currentYear = new Date().getFullYear();
+        for (let year = currentYear - 50; year <= currentYear + 10; year++) {
+            const option = document.createElement('option');
+            option.value = year;
+            option.text = year;
+            yearSelect.appendChild(option);
+        }
+  </script>
+</body>
+</html>

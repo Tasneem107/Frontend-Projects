@@ -1,0 +1,150 @@
+<html >
+<head>
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Adjust this for the desired height */
+      background-color: #f0f0f0; /* Just for visualization */
+    }
+    table {
+      border: solid 3px;
+      border-spacing: 4px;
+      font-family: 'Times New Roman', Times, serif;
+      border-color: #606163;
+    }
+    td {
+      background-color: #00ccff;
+      border: solid 1px;
+      padding: 3px;
+    }
+    .first-column {
+      padding-right: 14px;
+      padding-left: 11px;
+    }
+    .second-column {
+      padding-left: 11px;
+    }
+    .table-heading {
+      background-color: #ffffa9;
+      text-align: center;
+      color: #ec0d01;
+      font-size: 25px;
+      border: solid 1px black;
+    }
+    select {
+      background-color: white;
+      width: 100px;
+    }
+    input[type="text"] {
+      background-color: white;
+      width: 200px;
+      border: none;
+    }
+    input[type="password"] {
+    background-color: white;
+    width: 200px;
+    border: none;
+    }
+    input[type="radio"] {
+      background-color: white;
+    }
+    textarea {
+      background-color: white;
+      text-align: center;
+      width: 200px;
+      border: none;
+    }
+    button {
+      background-color: white;
+      padding: 10px 20px;
+      border: none;
+      width: 150px;
+    }
+    .buttons {
+      text-align: center;
+      padding-right: 13px;
+      padding-left: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <table>
+        <thead>
+          <tr>
+            <th class="table-heading" colspan="2">Registration Form</th>
+          </tr>
+        </thead>
+        <tbody class="table-body">
+          <tr>
+            <td class="first-column">Enter Name</td>
+            <td class="second-column"><input type="text" required></td>
+          </tr>
+          <tr>
+            <td class="first-column">Enter Password</td>
+            <td class="second-column"><input type="password" required></td>
+          </tr>
+          <tr>
+            <td class="first-column">Enter Address</td>
+            <td class="second-column"><textarea name="email" cols="40" rows="3"> </textarea></td>
+          </tr>
+          <tr>
+            <td class="first-column">Select Game</td>
+            <td class="second-column">
+              <div>
+                <input type="checkbox">Hockey<br>
+                <input type="checkbox">Football<br>
+                <input type="checkbox">Badminton<br>
+                <input type="checkbox">Cricket<br>
+                <input type="checkbox">Volleyball<br>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="first-column">Gender</td>
+            <td class="second-column">
+              <div>
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender" checked>Female
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="first-column">Select your age</td>
+            <td class="second-column">
+              <div class="age-select">
+                <select>
+                  <option value="" disabled selected hidden>Select</option>
+                  <option value="">18-24</option>
+                  <option value="">25-34</option>
+                  <option value="">35-44</option>
+                  <option value="">45-59</option>
+                  <option value="">60+</option>
+                </select>
+              </div>
+            </td>
+          </tr>
+          <tr>
+        	 <td class="first-column">Select Photo</td>
+        	 <td class="second-column">
+        	   <div class="input-file"><input type="file"> </div></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="buttons">
+                <button>Click Me</button>
+                <button type="reset">Reset</button>
+                <button>Submit Form</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
